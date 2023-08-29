@@ -1,0 +1,79 @@
+
+USING npx:
+npx create-react-app app-name
+
+
+USING npm:
+Create folder
+npm init react-app app-name
+
+Inside folder
+npm init react-app .
+
+
+Gets rid of babel error - add to bottom of package.json
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
+
+
+INSTALLING Tailwind CSS
+Puts entries in package.json 
+npm install --save-dev tailwindcss@latest autoprefixer@latest
+
+Creates the tailwind.config.js
+npx tailwindcss init
+
+Add to tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,js,jsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+Add to src/App.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+ADDING prettierrc
+add .prettierrc.json file and add {} to the file
+
+In Visual Studio Code, Add Extensions - and install:
+  Prettier - Code formatter
+
+Go to 
+Settings -> Text Editor -> Formatting -> Format On save - Checked
+
+In Settings search for:
+  Prettier: Require Config - Checked
+
+
+
+CODE-ALONG: Create an Interactive Search Bar for the Contact List
+download zip
+  npm install
+  npm update
+
+delete .babelrc
+remove "autoprefixer" : {} from .postcssrc file
+
+  npm run dev
+
+Make sure when you import in components to leave off the .jsx extension
+  import Contact from "./Contact"; - good
+  import Contact from "./Contact.jsx"; -will cause unexpected errors
+
+
+
+
+
+
+
+
+
+
