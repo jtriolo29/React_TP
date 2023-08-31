@@ -52,6 +52,18 @@ Settings -> Text Editor -> Formatting -> Format On save - Checked
 In Settings search for:
   Prettier: Require Config - Checked
 
+.GITIGNORE contents
+
+# node_modules/
+node_modules/
+
+# .parcel-cache/
+.parcel-cache/
+
+# dist/
+dist/
+
+
 
 
 CODE-ALONG: Create an Interactive Search Bar for the Contact List
@@ -88,6 +100,31 @@ contact.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
 contact.lastName.toLowerCase().includes(searchTerm.toLowerCase()) 
 
 
+CODE-ALONG: Create a Custom Fetch Hook for the Contact List
+
+
+
+
+
+
+
+
+
+
+
+EXERCISE: Simple React Calculator
+
+MID-POINT ASSIGNMENT: Sale Countdown
+
+
+
+
+
+
+
+
+
+
 CODE-ALONG: Add React Router and Routes to the Contact List
 download zip & extract
   npm install
@@ -101,6 +138,32 @@ remove "autoprefixer" : {} from .postcssrc file
 add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
                                               purge: ["./src/**/*.html", "./src/**/*.jsx"],
   npm run dev
+
+
+
+EXERCISE: Routing Pages
+download zip and extract
+add .gitignore
+
+  npm install
+
+remove "autoprefixer" : {} from .postcssrc file 
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
+                                              purge: ["./src/**/*.html", "./src/**/*.jsx"],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
