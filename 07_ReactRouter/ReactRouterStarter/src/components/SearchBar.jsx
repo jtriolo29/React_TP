@@ -1,10 +1,6 @@
-import { useNavigate } from "react-router-dom";
-
 function SearchBar({ searchValue, searchValueFunction }) {
-  const navigate = useNavigate();
-
   return (
-    <div className="w-full mt-6 md:w-auto lg:max-w-md m-auto flex">
+    <div className="w-full mt-6 md:w-auto lg:max-w-md m-auto">
       <form
         className="flex px-4 border-2 border-gray-300 rounded-md justify-between hover:shadow-lg focus:shadow-lg"
         onSubmit={(e) => {
@@ -44,14 +40,6 @@ function SearchBar({ searchValue, searchValueFunction }) {
           </svg>
         </button>
       </form>
-      {/* Added button for Create as challenge - not part of code along */}
-      <button
-        className="bg-blue-600 rounded-full py-1 px-4 text-white hover:bg-gray-50 hover:border-blue-400  
-          hover:text-blue-400 hover:shadow-2xl border-2 m-5"
-        onClick={() => navigate("/create")}
-      >
-        Create Contact
-      </button>
     </div>
   );
 }
