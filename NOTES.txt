@@ -89,6 +89,7 @@ delete the .parsel-cache & dist folders
   npm install
   npm update
 
+add .gitignore 
 delete .babelrc
 remove "autoprefixer" : {} from .postcssrc file
 add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
@@ -101,28 +102,39 @@ contact.lastName.toLowerCase().includes(searchTerm.toLowerCase())
 
 
 CODE-ALONG: Create a Custom Fetch Hook for the Contact List
+download zip & extract
+  npm install
+  npm update
 
+add .gitignore 
+delete .babelrc
+remove "autoprefixer" : {} from .postcssrc file
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
 
-
-
-
-
-
-
-
+  npm run dev
 
 
 EXERCISE: Simple React Calculator
+Will wait and do last - want to simplify what I have
+
+
+
 
 MID-POINT ASSIGNMENT: Sale Countdown
+download zip & extract
+  npm install
+  npm update
 
+remove "autoprefixer" : {} from .postcssrc file
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
 
+// Maybe give the students a heads up on this...
+to use the 'date-fns' package run:
+  npm install date-fns --save
 
+  npm run dev
 
-
-
-
-
+NOTE:  new Date() will not work.  Need to put in a static date
 
 
 CODE-ALONG: Add React Router and Routes to the Contact List
@@ -138,6 +150,7 @@ remove "autoprefixer" : {} from .postcssrc file
 add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
                                               purge: ["./src/**/*.html", "./src/**/*.jsx"],
   npm run dev
+
 
 
 
