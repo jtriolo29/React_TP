@@ -13,7 +13,7 @@ npm init react-app .
 
 Gets rid of babel error - add to bottom of package.json
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11" react-
   }
 
 
@@ -55,12 +55,13 @@ In Settings search for:
 
 
 CODE-ALONG: Create an Interactive Search Bar for the Contact List
-download zip
+download zip & extract
   npm install
   npm update
 
 delete .babelrc
 remove "autoprefixer" : {} from .postcssrc file
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
 
   npm run dev
 
@@ -70,9 +71,36 @@ Make sure when you import in components to leave off the .jsx extension
 
 
 
+CODE-ALONG: Add Side Effects to Search The Contact List
+download zip & extract 
+delete the .parsel-cache & dist folders
+  npm install
+  npm update
+
+delete .babelrc
+remove "autoprefixer" : {} from .postcssrc file
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
+
+  npm run dev
 
 
+contact.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+contact.lastName.toLowerCase().includes(searchTerm.toLowerCase()) 
 
+
+CODE-ALONG: Add React Router and Routes to the Contact List
+download zip & extract
+  npm install
+  npm update
+
+add .gitignore - get from another project
+delete .babelrc
+remove "autoprefixer" : {} from .postcssrc file
+
+  npx tailwindcss init
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
+                                              purge: ["./src/**/*.html", "./src/**/*.jsx"],
+  npm run dev
 
 
 
