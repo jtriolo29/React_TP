@@ -23,6 +23,8 @@ function EffectWithCleanup() {
   return (
     <>
       <h1>Component With Effect</h1>
+      <h2>An alert will pop up and will be cleaned up</h2>
+      <h3>The cleanup will clear the timer</h3>
     </>
   );
 }

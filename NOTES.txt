@@ -9,7 +9,7 @@ npm init react-app app-name
 
 Inside folder
 npm init react-app .
-
+cd custom
 
 Gets rid of babel error - add to bottom of package.json
   "devDependencies": {
@@ -53,7 +53,7 @@ In Settings search for:
   Prettier: Require Config - Checked
 
 .GITIGNORE contents
-
+-------------------------------------------------
 # node_modules/
 node_modules/
 
@@ -63,10 +63,66 @@ node_modules/
 # dist/
 dist/
 
+# Ignore .vscode folder
+.vscode/
+-------------------------------------------------
+
+USING LIVE SERVER in Visual Studio Code
+The exercises in the beginning are very simple and to view the results in the 
+browser you will right click on the index.html and select:  Open with Live Server
+Remember to close the live server when done, by clicking on the -  
+Port: XXXX - located on bottom right of VSC 
 
 
+Notes for specific code-alongs & exercises
+------------------------------------------------- 
+-------------------------------------------------
 
-CODE-ALONG: Create an Interactive Search Bar for the Contact List
+01_INTRO TO REACT - NOTE:  Uses CDN for React functionality
+create folder for course projects 
+then open with Visual Studio Code and continue with exercise
+Right click the index.html and select:
+  Open with Live Server  
+when ready to view results in browser
+
+
+-------------------------------------------------
+
+
+02_SET UP REACT APP -  Hello World
+Uses Visual Studio Code & create-react-app
+Follow directions in Engage
+  npm start
+At end when adding a formatting tool, do the second way and 
+Add the Prettier Extension to Visual Studio Code
+
+
+-------------------------------------------------
+
+
+03_CODE-ALONG: Create a React Component
+download and extract zip
+there will only be 2 files - very simple
+Right click the index.html and select:
+  Open with Live Server  
+to view results in browser
+
+
+-------------------------------------------------
+
+
+04_EXERCISE:   Composing Components
+download and extract zip
+will only be working with 2 files:  index.html & solutionPage.html
+index.html has babel scripts to render 5 const on page
+will convert to Components and put on the solutionPage.html
+When ready to view pages use Live Server
+
+
+-------------------------------------------------
+
+
+05_CODE-ALONG: Create an Interactive Search Bar for the Contact List
 download zip & extract
   npm install
   npm update
@@ -82,8 +138,19 @@ Make sure when you import in components to leave off the .jsx extension
   import Contact from "./Contact.jsx"; -will cause unexpected errors
 
 
+-------------------------------------------------
 
-CODE-ALONG: Add Side Effects to Search The Contact List
+
+06_DEMO - The Effect Hook
+This is a demo created with create-react-app and is not a
+code-along or exercise
+  npm start
+
+
+-------------------------------------------------
+
+
+07_CODE-ALONG: Add Side Effects to Search The Contact List
 download zip & extract 
 delete the .parsel-cache & dist folders
   npm install
@@ -101,7 +168,19 @@ contact.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
 contact.lastName.toLowerCase().includes(searchTerm.toLowerCase()) 
 
 
-CODE-ALONG: Create a Custom Fetch Hook for the Contact List
+-------------------------------------------------
+
+
+08_DEMO Custom Hooks
+This is a demo created with create-react-app and is not a
+code-along or exercise
+  npm start
+
+
+-------------------------------------------------
+
+
+09_CODE-ALONG: Create a Custom Fetch Hook for the Contact List
 download zip & extract
   npm install
   npm update
@@ -114,13 +193,17 @@ add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
   npm run dev
 
 
-EXERCISE: Simple React Calculator
+-------------------------------------------------
+
+
+10_EXERCISE: Simple React Calculator
 Will wait and do last - want to simplify what I have
 
 
+-------------------------------------------------
 
 
-MID-POINT ASSIGNMENT: Sale Countdown
+11_MID-POINT ASSIGNMENT: Sale Countdown
 download zip & extract
   npm install
   npm update
@@ -137,7 +220,10 @@ to use the 'date-fns' package run:
 NOTE:  new Date() will not work.  Need to put in a static date
 
 
-CODE-ALONG: Add React Router and Routes to the Contact List
+-------------------------------------------------
+
+
+12_CODE-ALONG: Add React Router and Routes to the Contact List
 download zip & extract
   npm install
   npm update
@@ -152,19 +238,20 @@ add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
   npm run dev
 
 
+-------------------------------------------------
 
 
-EXERCISE: Routing Pages
+13_EXERCISE: Routing Pages
 download zip and extract
-add .gitignore
-
   npm install
 
+add .gitignore
 remove "autoprefixer" : {} from .postcssrc file 
 add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
                                               purge: ["./src/**/*.html", "./src/**/*.jsx"],
 
 
+-------------------------------------------------
 
 
 
@@ -176,6 +263,8 @@ add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
 
 
 
+-------------------------------------------------
+-------------------------------------------------
 
 
 
