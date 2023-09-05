@@ -301,6 +301,17 @@ package.json file - change name from "ExerciseRoutingPages" to "exerciseroutingp
 
 
 16_CODE-ALONG: Add an Error Boundary
+download, extract zip & open in Visual Studio Code
+delete the .parsel-cache & dist folders
+  
+  npm install
+
+add .gitignore - get from another project
+delete .babelrc
+remove "autoprefixer" : {} from .postcssrc file
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
+
+  npm run dev
 
 
 
