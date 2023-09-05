@@ -9,11 +9,10 @@ npm init react-app app-name
 
 Inside folder
 npm init react-app .
-cd custom
 
 Gets rid of babel error - add to bottom of package.json
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11" react-
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 
 
@@ -101,7 +100,7 @@ Add the Prettier Extension to Visual Studio Code
 
 
 03_CODE-ALONG: Create a React Component
-download and extract zip
+download, extract zip & open in Visual Studio Code
 there will only be 2 files - very simple
 Right click the index.html and select:
   Open with Live Server  
@@ -112,7 +111,7 @@ to view results in browser
 
 
 04_EXERCISE:   Composing Components
-download and extract zip
+download, extract zip & open in Visual Studio Code
 will only be working with 2 files:  index.html & solutionPage.html
 index.html has babel scripts to render 5 const on page
 will convert to Components and put on the solutionPage.html
@@ -123,7 +122,7 @@ When ready to view pages use Live Server
 
 
 05_CODE-ALONG: Create an Interactive Search Bar for the Contact List
-download zip & extract
+download, extract zip & open in Visual Studio Code
   npm install
   npm update
 
@@ -151,7 +150,7 @@ code-along or exercise
 
 
 07_CODE-ALONG: Add Side Effects to Search The Contact List
-download zip & extract 
+download, extract zip & open in Visual Studio Code
 delete the .parsel-cache & dist folders
   npm install
   npm update
@@ -181,7 +180,7 @@ code-along or exercise
 
 
 09_CODE-ALONG: Create a Custom Fetch Hook for the Contact List
-download zip & extract
+download, extract zip & open in Visual Studio Code
   npm install
   npm update
 
@@ -204,7 +203,7 @@ Will wait and do last - want to simplify what I have
 
 
 11_MID-POINT ASSIGNMENT: Sale Countdown
-download zip & extract
+download, extract zip & open in Visual Studio Code
   npm install
   npm update
 
@@ -224,7 +223,7 @@ NOTE:  new Date() will not work.  Need to put in a static date
 
 
 12_CODE-ALONG: Add React Router and Routes to the Contact List
-download zip & extract
+download, extract zip & open in Visual Studio Code
   npm install
   npm update
 
@@ -232,7 +231,9 @@ add .gitignore - get from another project
 delete .babelrc
 remove "autoprefixer" : {} from .postcssrc file
 
+this command creates the tailwind.config.js file
   npx tailwindcss init
+
 add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
                                               purge: ["./src/**/*.html", "./src/**/*.jsx"],
   npm run dev
@@ -242,27 +243,75 @@ add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
 
 
 13_EXERCISE: Routing Pages
-download zip and extract
-  npm install
+download, extract zip & open in Visual Studio Code
+if you have windows pc, delete the _MACOSX folder
 
-add .gitignore
+  npm install 
+  npm install react-router-dom@6
+
 remove "autoprefixer" : {} from .postcssrc file 
 add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
-                                              purge: ["./src/**/*.html", "./src/**/*.jsx"],
+package.json file - change name from "ExerciseRoutingPages" to "exerciseroutingpages"
+
+  npm run dev
+
+Test results by entering following URL's:
+  http://localhost:1234/
+  http://localhost:1234/men
+  http://localhost:1234/women
+  http://localhost:1234/sale
+  http://localhost:1234/seasonal  
+
+
+-------------------------------------------------
+
+
+14_CODE-ALONG: Add Route Changers to the Contact List
+download, extract zip & open in Visual Studio Code
+
+  npm install
+
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
+
+  npm run dev
+
+Engage has the following line of code:
+    key={contact.id}  
+however, the code is actually:
+    key={contact.contactId}
 
 
 -------------------------------------------------
 
 
 
+15_EXERCISE: Set up Route Changers
+download, extract zip & open in Visual Studio Code
+delete the .parsel-cache & dist folders
+
+  npm install
+
+remove "autoprefixer" : {} from .postcssrc file 
+package.json file - change name from "ExerciseRoutingPages" to "exerciseroutingpages"
+
+  npm run dev
+
+
+-------------------------------------------------
+
+
+16_CODE-ALONG: Add an Error Boundary
 
 
 
-
-
-
-
-
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
 -------------------------------------------------
 -------------------------------------------------
 
