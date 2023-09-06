@@ -128,7 +128,7 @@ download, extract zip & open in Visual Studio Code
 
 delete .babelrc
 remove "autoprefixer" : {} from .postcssrc file
-add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],  -at the top above purge
 
   npm run dev
 
@@ -158,7 +158,7 @@ delete the .parsel-cache & dist folders
 add .gitignore 
 delete .babelrc
 remove "autoprefixer" : {} from .postcssrc file
-add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],  -at the top above purge
 
   npm run dev
 
@@ -187,7 +187,7 @@ download, extract zip & open in Visual Studio Code
 add .gitignore 
 delete .babelrc
 remove "autoprefixer" : {} from .postcssrc file
-add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],  -at the top above purge
 
   npm run dev
 
@@ -208,7 +208,7 @@ download, extract zip & open in Visual Studio Code
   npm update
 
 remove "autoprefixer" : {} from .postcssrc file
-add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],  -at the top above purge
 
 // Maybe give the students a heads up on this...
 to use the 'date-fns' package run:
@@ -234,7 +234,7 @@ remove "autoprefixer" : {} from .postcssrc file
 this command creates the tailwind.config.js file
   npx tailwindcss init
 
-add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"], -  -at the top
                                               purge: ["./src/**/*.html", "./src/**/*.jsx"],
   npm run dev
 
@@ -250,7 +250,7 @@ if you have windows pc, delete the _MACOSX folder
   npm install react-router-dom@6
 
 remove "autoprefixer" : {} from .postcssrc file 
-add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],  -at the top above purge
 package.json file - change name from "ExerciseRoutingPages" to "exerciseroutingpages"
 
   npm run dev
@@ -271,7 +271,7 @@ download, extract zip & open in Visual Studio Code
 
   npm install
 
-add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],  -at the top above purge
 
   npm run dev
 
@@ -309,15 +309,58 @@ delete the .parsel-cache & dist folders
 add .gitignore - get from another project
 delete .babelrc
 remove "autoprefixer" : {} from .postcssrc file
-add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],   -at the top above purge
 
   npm run dev
 
 
 
 -------------------------------------------------
+
+
+17_EXERCISE: Refactoring Components
+download, extract zip & open in Visual Studio Code
+delete the .parsel-cache & dist folders
+
+  npm install
+
+delete .babelrc
+remove "autoprefixer" : {} from .postcssrc file
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],  -at the top above purge
+
+  npm run dev
+
+
 -------------------------------------------------
+
+
+18_CODE-ALONG: Add a User Context
+download, extract zip & open in Visual Studio Code
+delete the .parsel-cache & dist folders
+
+  npm install
+
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],  -at the top above purge
+
+  npm run dev
+
+
 -------------------------------------------------
+
+
+19_EXERCISE: Create and Consume Context
+download, extract zip & open in Visual Studio Code
+if you have windows pc, delete the _MACOSX folder
+delete the .parsel-cache & dist folders
+
+  npm install
+
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],  -at the top above purge
+remove "autoprefixer" : {} from .postcss.config.js file
+
+  npm run dev
+
+
 -------------------------------------------------
 -------------------------------------------------
 -------------------------------------------------

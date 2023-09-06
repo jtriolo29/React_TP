@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-/* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from "react";
+
+import { Fragment, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { ShoppingCartIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { useLocation, NavLink } from "react-router-dom";
 import Logo from "./Logo";
+import Cart from "./Cart";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -12,26 +13,20 @@ function classNames(...classes) {
 
 function NavigationBar() {
   const { pathname } = useLocation();
+  const [shoppingCartOpen, setShoppingCartOpen] = useState(false);
+
   const navigation = [
-    {
-      name: "Home",
-      href: "/",
-      current: pathname === "/" ? true : false
-    },
-    {
-      name: "Men",
-      href: "/men",
-      current: pathname === "/men" ? true : false
-    },
+    { name: "Home", href: "/", current: pathname === "/" ? true : false },
+    { name: "Men", href: "/men", current: pathname === "/men" ? true : false },
     {
       name: "Women",
       href: "/women",
-      current: pathname === "/women" ? true : false
+      current: pathname === "/women" ? true : false,
     },
     {
       name: "Sale",
       href: "/sale",
-      current: pathname === "/sale" ? true : false
+      current: pathname === "/sale" ? true : false,
     },
   ];
 
@@ -77,7 +72,7 @@ function NavigationBar() {
                           item.current
                             ? " text-lg  transform hover:scale-110 border-b-4 border-black "
                             : " text-lg  hover:text-gray-800 transform hover:scale-110",
-                          " px-3 text-black py-6 text-sm font-medium  h-full"
+                          "px-3 text-black py-6 text-sm font-medium  h-full"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -92,10 +87,14 @@ function NavigationBar() {
                   aria-label="Shopping Cart"
                   type="button"
                   className=" p-1 rounded-full text-gray-800 hover:text-gray-800 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                  onClick={() => setShoppingCartOpen(true)}
                 >
                   <span className="sr-only">View notifications</span>
                   <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
+                {shoppingCartOpen ? (
+                  <Cart open={shoppingCartOpen} setOpen={setShoppingCartOpen} />
+                ) : null}
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
