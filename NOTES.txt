@@ -227,7 +227,7 @@ download, extract zip & open in Visual Studio Code
   npm install
   npm update
 
-add .gitignore - get from another project
+add .gitignore 
 delete .babelrc
 remove "autoprefixer" : {} from .postcssrc file
 
@@ -306,7 +306,7 @@ delete the .parsel-cache & dist folders
   
   npm install
 
-add .gitignore - get from another project
+add .gitignore 
 delete .babelrc
 remove "autoprefixer" : {} from .postcssrc file
 add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],   -at the top above purge
@@ -362,7 +362,77 @@ remove "autoprefixer" : {} from .postcss.config.js file
 
 
 -------------------------------------------------
+
+
+20_CODE-ALONG: Set Up a Testing Environment
+download, extract zip & open in Visual Studio Code
+delete the .parsel-cache & dist folders
+
+  npm install
+  npm install --save-dev jest msw @testing-library/react @testing-library/user-event @testing-library/jest-dom whatwg-fetch eslint-plugin-jest
+OR - if the above command errors out
+  npm install --legacy-peer-deps --save-dev jest msw @testing-library/react @testing-library/user-event @testing-library/jest-dom whatwg-fetch eslint-plugin-jest
+
+add .gitignore
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],  -at the top above purge
+
+follow code along to configure jest, babel & eslint
+
+  npm run test 
+
+  npm install --legacy-peer-deps --save-dev @babel/preset-env
 -------------------------------------------------
+
+
+21_CODE-ALONG: Test React Components
+download, extract zip & open in Visual Studio Code
+delete the .parsel-cache & dist folders
+
+  npm install
+  npm install --save-dev jest msw @testing-library/react @testing-library/user-event @testing-library/jest-dom whatwg-fetch eslint-plugin-jest
+  OR
+  npm install --legacy-peer-deps --save-dev jest msw @testing-library/react @testing-library/user-event @testing-library/jest-dom whatwg-fetch eslint-plugin-jest
+
+add .gitignore
+add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],  -at the top above purge
+
+NOTE:  the jest.setup.js file is empty - use contents from previous exercise
+             the folder name can be  __tests__ or __test__
+
+To run tests:
+
+  npm run test
+
+
+
+*Test 1
+test("displays the home page", async function () {});
+not
+test("displays the create contact page", async function () {});
+
+The test will fail if the react version in the package.json file is ^17.0.X, the 
+zip download for this exercise has ^18.2.0 as the version in the package.json file
+so it should not fail 
+
+*Test 3
+create the requestHandlers.js & server.js
+add beforAll(), afterEach(), afterAll() methods
+
+Verify -
+  "whatwg-fetch": "^3.6.18" - should be in package.json file
+  import "whatwg-fetch"; -   should be in useFetch.jsx file
+If not there -
+  npm install --save-dev whatwg-fetch
+  add import "whatwg-fetch"; in useFetch.jsx file
+
+*Test 6
+The test passes, however, there is an error that I have yet to figure out that 
+occurs after the tests run.  It has something to do with the test finishing before 
+the component is unmounted.
+Once TEST 7 is written and run, the error goes away and all 7 tests pass.
+
+*Test 7
+This is written on a new file, Search.test.js
 -------------------------------------------------
 -------------------------------------------------
 -------------------------------------------------
