@@ -196,8 +196,8 @@ add to tailwind.config.js:    content: ["./src/**/*.{html,js,jsx}"],  -at the to
 
 
 10_EXERCISE: Simple React Calculator
-Will wait and do last - want to simplify what I have
-
+There is one version of the calculator and want to add a couple 
+of different solutions for the Simple Calculator
 
 -------------------------------------------------
 
@@ -429,15 +429,46 @@ If not there -
 The test passes, however, there is an error that I have yet to figure out that 
 occurs after the tests run.  It has something to do with the test finishing before 
 the component is unmounted.
-Once TEST 7 is written and run, the error goes away and all 7 tests pass.
+Once TEST 7 is written and run, the error stays but all 7 tests pass.
 
 *Test 7
 This is written on a new file, Search.test.js
+
+
 -------------------------------------------------
+
+NOTE:  Use Postman to see what data is returned:
+  GET  https://dashboard.mthree.academy/daily/kpis
+  GET  https://dashboard.mthree.academy/daily/employees
+  GET  https://dashboard.mthree.academy/reviews/stats
+  GET  https://dashboard.mthree.academy/reviews/all
+  GET  https://dashboard.mthree.academy/year/sales
+
+22_CODE-ALONG: Dashboard Base Components - Part 1
+download, extract zip & open in Visual Studio Code
+
+  npm install
+  npm run dev
+
+You will get errors when you run the app.  This is OK & expected.
+
+Start code along
+During the code along you will be using the following npm commands
+  npm run test
+  npm install recharts
+  npm install @headlessui/react
+  npm install react-router-dom@6
+
+If errors, for the UserContext.test.js file, change this:
+import { StaticRouter } from "react-router-dom/server";
+to this:
+import { StaticRouter } from "react-router-dom";
+
+While building the Home, Reviews and Sales pages, urge the students to refer back to the 
+base components and props that the pages are using
+
 -------------------------------------------------
--------------------------------------------------
--------------------------------------------------
--------------------------------------------------
+
 
 
 
