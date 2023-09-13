@@ -1,0 +1,31 @@
+Managing state in Contact List   **  PROPS are PARAMETERS
+********************************************************
+PARENT
+function Search()
+
+  const [usersSearch, setUsersSearch] = useState("");
+
+  return
+      <SearchBar
+        searchValue={usersSearch}
+        searchValueFunction={setUsersSearch}
+      />
+
+--Parent declares variable to hold state and then pass them as props to child 
+
+
+********************************************************
+CHILD
+function SearchBar({ searchValue, searchValueFunction })
+
+
+return 
+<input
+  id="searchBar"
+  value={searchValue}
+  onChange={(e) => searchValueFunction(e.target.value)}
+/>
+
+-- Child is passed props from Parent's rendering of SearchBar 
+
+********************************************************

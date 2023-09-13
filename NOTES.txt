@@ -42,6 +42,18 @@ Add to src/App.css
 ADDING prettierrc
 add .prettierrc.json file and add {} to the file
 
+*Add format... to package.json
+
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
+  },
+
+
+--Do this only one time
 In Visual Studio Code, Add Extensions - and install:
   Prettier - Code formatter
 
@@ -66,7 +78,7 @@ dist/
 .vscode/
 -------------------------------------------------
 
-USING LIVE SERVER in Visual Studio Code
+USING LIVE SERVER in Visual Studio Code (VSC)
 The exercises in the beginning are very simple and to view the results in the 
 browser you will right click on the index.html and select:  Open with Live Server
 Remember to close the live server when done, by clicking on the -  

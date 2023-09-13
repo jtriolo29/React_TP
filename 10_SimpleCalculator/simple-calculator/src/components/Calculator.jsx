@@ -10,11 +10,13 @@ export default function Calculator() {
   return (
     <div>
       <DisplayScreen 
-        numberString={exprString} 
-        result={displayResult} />
+        exprString={exprString} 
+        displayResult={displayResult} 
+      />
       <ButtonBox
-        getNumberString={setExprString}
-        getResult={setDisplayResult}
+        setExprString={setExprString}
+        setDisplayResult={setDisplayResult}
+        exprString={exprString}
       />
     </div>
   );

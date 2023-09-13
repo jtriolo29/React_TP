@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "./Button";
-import { useState } from "react";
+import * as math from "mathjs";
 
-export default function ButtonBox({ getNumberString, getResult }) {
+export default function ButtonBox({ setExprString, setDisplayResult, exprString }) {
   const style1 =
     "bg-white hover:bg-purple-200 text-black font-bold h-11 w-11 m-1 rounded-full";
   const style2 =
@@ -10,31 +10,30 @@ export default function ButtonBox({ getNumberString, getResult }) {
   const style3 =
     "bg-yellow-400 hover:bg-purple-200 text-black font-bold h-11 w-11 m-1 rounded-full";
 
-  const [exprString, setExprString] = useState("");
+  
 
   function displayNumbers(exprChar) {
-    getNumberString((expr) => expr + exprChar);
-    setExprString((expr) => expr + exprChar);
+    setExprString((prevExpr) => prevExpr + exprChar);
   }
 
   function displayResult() {
     try {
-      getResult("= " + parseFloat(eval(exprString).toFixed(5)).toString());
+      //  Uses the math.js evaluate function which takes operator precedent into account
+      const evalResults = parseFloat(math.evaluate(exprString).toFixed(5)).toString();
+      setDisplayResult("= " + evalResults);
     } catch (error) {
-      getNumberString("ERROR");
+      setExprString("ERROR");
     }
   }
 
   function clearDisplay() {
-    getNumberString("");
-    getResult("");
     setExprString("");
+    setDisplayResult("");
   }
 
   function clearEntry() {
-    getNumberString((calExp) => calExp.slice(0, -1));
-    getResult("");
-    setExprString((calExp) => calExp.slice(0, -1));
+    setExprString((prevExpr) => prevExpr.slice(0, -1));
+    setDisplayResult("");
   }
 
   return (

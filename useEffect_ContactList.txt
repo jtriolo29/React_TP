@@ -1,0 +1,54 @@
+Managing state and useEffect() in Contact List   **  PROPS are PARAMETERS
+********************************************************
+PARENT
+function Search()
+
+const [usersSearch, setUsersSearch] = useState("")
+const [contactData, setContactData] = useState([]);
+
+useEffect(() => {
+  getContactData()  -- will be run after render
+}, [])
+
+async function getContactData(){
+  const response = await fetch(URL)
+  const data = await response.json();
+  setContactData(data)  -- contactData is now populated
+}
+
+  return
+    <SearchBar
+        searchValue={usersSearch}
+        searchValueFunction={setUsersSearch}
+    />
+
+
+********************************************************
+CHILD
+function SearchBar({ searchValue, searchValueFunction })
+
+return 
+<input
+  id="searchBar"
+  value={searchValue}
+  onChange={(e) => searchValueFunction(e.target.value)}
+/>
+
+
+
+
+********************************************************
+CHILD
+function Contact({ imgSrc = contactImgUrl, name, telNumber, email })
+
+
+
+
+
+
+
+
+
+
+
+
