@@ -59,7 +59,7 @@ function Game() {
     }
 
     const result = {
-      text: `Exact: ${exact}  Partial: ${partial}`,
+      text: `Exact: ${exact} Partial: ${partial}`,
       guess: colorizedGuess
     };
 
@@ -88,7 +88,7 @@ function Game() {
   return (
     <div
       className="w-1/3 min-w-[450px] bg-violet-200 rounded-lg border 
-      border-gray-800 p-4 flex flex-col"
+        border-gray-800 p-4 flex flex-col"
     >
       <Header />
       <div className="mt-4 bg-violet-100 rounded-lg border border-gray-800 p-4">
@@ -115,7 +115,8 @@ function Game() {
       </div>
       <div className="mt-4 self-end">
         <button
-          className="bg-violet-700 text-white rounded-lg py-1 px-2 text-xs hover:bg-violet-800 mb-4 mr-4"
+          className="bg-violet-700 text-white rounded-lg py-1 px-2 
+            text-xs hover:bg-violet-800 mb-4 mr-4"
           onClick={resetGame}
         >
           Reset Game

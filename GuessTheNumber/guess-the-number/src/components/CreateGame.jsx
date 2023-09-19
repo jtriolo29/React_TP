@@ -46,7 +46,7 @@ function CreateGame({ setAnswer, setupNewGame, gameStatus }) {
         onCancel={handleCancel}
         onConfirm={handleConfirm}
       />
-      <div className="text-purple-600 mt-2 font-semibold">{gameStatus}</div>
+      <div className="text-purple-600 mt-2 text-xl font-semibold">{gameStatus}</div>
     </div>
   );
 }

@@ -9,8 +9,8 @@ function DisplayGuesses({ results }) {
       <div className="flex justify-start mt-2 text-gray-700">
         <ul className="list-disc list-inside text-left font-semibold pl-5">
           {results.map((result, index) => (
-            <li key={index} className="font-semibold text x1">
-              Guess: {result.guess} {result.text}
+            <li key={index} className="font-semibold text-xl preserve-spaces">
+              Guess: {result.guess}    {result.text}
             </li>
           ))}
         </ul>
