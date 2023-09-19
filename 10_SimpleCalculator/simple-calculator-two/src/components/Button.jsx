@@ -23,7 +23,7 @@ function Button({ value, handleButtonClick, calculateResult, clearInput }) {
   return (
     <button
       className={`text-white text-2xl ${buttonColor} rounded-full ${buttonWidth} h-14 
-        focus:outline-none focus:border-blue-900`}
+        border border-gray-500 shadow-lg`}
       onClick={handleClick}
     >
       {value}

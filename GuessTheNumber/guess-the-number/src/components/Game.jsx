@@ -32,15 +32,37 @@ function Game() {
   function submitGuess(submittedGuess, answer) {
     let exact = 0;
     let partial = 0;
+    let colorizedGuess = [];
 
     for (let i = 0; i < 4; i++) {
       if (submittedGuess.charAt(i) === answer.charAt(i)) {
         exact++;
+        colorizedGuess.push(
+          <span style={{ color: '#7DCEA0' }} key={i}>
+            {submittedGuess.charAt(i)}
+          </span>
+        );        
       } else if (answer.includes(submittedGuess.charAt(i))) {
         partial++;
+        colorizedGuess.push(
+          <span style={{ color: '#E74C3C' }} key={i}>
+            {submittedGuess.charAt(i)}
+          </span>
+        );
+      } else {
+        colorizedGuess.push(
+          <span key={i}>
+            {submittedGuess.charAt(i)}
+          </span>
+        );        
       }
     }
-    const result = `Guess: ${submittedGuess}  Exact: ${exact}  Partial: ${partial}`;
+
+    const result = {
+      text: `Exact: ${exact}  Partial: ${partial}`,
+      guess: colorizedGuess
+    };
+
     const newResults = [...results, result];
     setResults(newResults);
 
@@ -88,13 +110,12 @@ function Game() {
           showAlertModal={showAlertModal}
         />
       </div>
-      <div className="mt-4 bg-violet-100 rounded-lg border border-gray-800 p-4">
+      <div className="mt-4 bg-violet-100 rounded-lg border border-gray-800 p-1">
         <DisplayGuesses results={results} />
       </div>
       <div className="mt-4 self-end">
         <button
-          className="bg-violet-700 text-white rounded-lg 
-          py-1 px-2 hover:bg-violet-800 mb-4 mr-4"
+          className="bg-violet-700 text-white rounded-lg py-1 px-2 text-xs hover:bg-violet-800 mb-4 mr-4"
           onClick={resetGame}
         >
           Reset Game

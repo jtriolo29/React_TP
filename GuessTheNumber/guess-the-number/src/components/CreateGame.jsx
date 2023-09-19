@@ -45,7 +45,6 @@ function CreateGame({ setAnswer, setupNewGame, gameStatus }) {
         isOpen={showConfirmModal} 
         onCancel={handleCancel}
         onConfirm={handleConfirm}
-
       />
       <div className="text-purple-600 mt-2 font-semibold">{gameStatus}</div>
     </div>

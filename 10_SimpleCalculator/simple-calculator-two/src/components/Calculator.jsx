@@ -28,6 +28,7 @@ function Calculator() {
     let numbers = [];
     let ops = [];
     let num = "";
+    let lastWasOperator = true;
 
     // Step 1: Tokenize the expression into numbers and operators
     for (let i = 0; i < expression.length; i++) {
@@ -35,10 +36,20 @@ function Calculator() {
 
       if (!isNaN(token) || token === ".") {
         num += token; // Accumulate consecutive digits into a number
+        lastWasOperator = false;
       } else if (operators.includes(token)) {
-        numbers.push(parseFloat(num)); // Push the previous number into the numbers array
-        ops.push(token); // Push the operator into the ops array
-        num = ""; // Reset num for the next number
+        if (lastWasOperator && (token === "+" || token === "-")) {
+          // Handle signed numbers
+          num += token;
+        } else {
+          // This is an operator following a number or another operator
+          if (num !== "") {
+            numbers.push(parseFloat(num)); // Push the previous number into the numbers array
+          }
+          ops.push(token); // Push the operator into the ops array
+          num = ""; // Reset num for the next number
+        }
+        lastWasOperator = true;
       }
     }
 

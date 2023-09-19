@@ -48,6 +48,7 @@ function MakeGuess({
         disabled={gameStatus !== STATUS_IN_PROGRESS}
       />
       <button
+        // ref={inputRef}
         className="bg-purple-800 text-white rounded-lg py-2 px-4 hover:bg-purple-900"
         onClick={handleSubmit}
       >
