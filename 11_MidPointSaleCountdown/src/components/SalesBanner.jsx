@@ -11,9 +11,9 @@ import { TagIcon } from "@heroicons/react/outline";
 
 function SalesBanner() {
   // Must use a static date
-  const startDate = new Date("2023-09-15");
+  const startDate = new Date("2023-09-29");
   const saleEndDate = add(startDate, {
-    days: 4,
+    days: 5,
     hours: 0,
     minutes: 0,
     seconds: 0,

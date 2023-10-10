@@ -3,8 +3,7 @@ import Header from "./Header";
 import CreateGame from "./CreateGame";
 import MakeGuess from "./MakeGuess";
 import DisplayGuesses from "./DisplayGuesses";
-import WinModal from "./WinModal";
-import AlertModal from "./AlertModal";
+import { DialogButton, Alert } from "./DialogModal";
 import { STATUS_START, STATUS_IN_PROGRESS } from "../utils/constants";
 
 function Game() {
@@ -27,6 +26,7 @@ function Game() {
   function setupNewGame() {
     setGameStatus(STATUS_IN_PROGRESS);
     setResults([]);
+    setGuess("");
   }
 
   function submitGuess(submittedGuess, answer) {
@@ -38,38 +38,35 @@ function Game() {
       if (submittedGuess.charAt(i) === answer.charAt(i)) {
         exact++;
         colorizedGuess.push(
-          <span style={{ color: '#7DCEA0' }} key={i}>
+          <span style={{ color: "#7DCEA0" }} key={i}>
             {submittedGuess.charAt(i)}
           </span>
-        );        
+        );
       } else if (answer.includes(submittedGuess.charAt(i))) {
         partial++;
         colorizedGuess.push(
-          <span style={{ color: '#E74C3C' }} key={i}>
+          <span style={{ color: "#E74C3C" }} key={i}>
             {submittedGuess.charAt(i)}
           </span>
         );
       } else {
-        colorizedGuess.push(
-          <span key={i}>
-            {submittedGuess.charAt(i)}
-          </span>
-        );        
+        colorizedGuess.push(<span key={i}>{submittedGuess.charAt(i)}</span>);
       }
     }
 
     const result = {
       text: `Exact: ${exact} Partial: ${partial}`,
-      guess: colorizedGuess
+      guess: colorizedGuess,
     };
 
+    //  Make copy with spread operator and update copy
     const newResults = [...results, result];
     setResults(newResults);
 
     // Check for winner
     if (exact === 4) {
       setFinalGuessCount(newResults.length);
-      setWinShowModal(true);
+      setWinShowModal(true);     
       setGameStatus(STATUS_START);
       setResults([]);
     }
@@ -83,6 +80,8 @@ function Game() {
   function resetGame() {
     setGameStatus(STATUS_START);
     setResults([]);
+    setGuess("");
+    setAnswer("");
   }
 
   return (
@@ -122,21 +121,30 @@ function Game() {
           Reset Game
         </button>
       </div>
-      <AlertModal
-        isOpen={showAlert}
-        message={alertMessage}
-        onClose={() => setShowAlert(false)}
-      />
-      {showWinModal && (
-        <WinModal
-          closeModal={() => {
-            setWinShowModal(false);
-            setAnswer("");
-          }}
-          answer={answer}
-          numberOfGuesses={finalGuessCount}
-        />
+      {showAlert && (
+        <Alert>
+          <div className="text-center p-4">{alertMessage}</div>
+          <DialogButton onClick={() => setShowAlert(false)}>OK</DialogButton>
+        </Alert>
       )}
+      {showWinModal && (
+        <Alert>
+          Congratulations!
+          <p className="text-lg mb-4">
+            You've won the game with {finalGuessCount} guesses.
+          </p>
+          <p className="text-lg mb-4">The answer was {answer}.</p>
+          <DialogButton
+            onClick={() => {
+              setWinShowModal(false);
+              setAnswer("");
+            }}
+          >
+            Close
+          </DialogButton>
+        </Alert>
+      )}
+
       {/* <div className="text-center text-xs">
         <p>Debug Answer: {answer}</p>
         <p>Debug Guess: {guess}</p>

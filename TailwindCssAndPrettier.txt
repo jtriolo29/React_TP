@@ -1,0 +1,85 @@
+*Run - this puts entries in package.jsonn 
+npm install --save-dev tailwindcss@latest autoprefixer@latest
+
+*Run - this creates the tailwind.config.js
+npx tailwindcss init
+
+
+tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,js,jsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+*One of these files needs to be included
+**********************
+postcss.config.js
+
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+  },
+};
+
+**********************
+.postcssrc
+
+{
+  plugins: {
+    "tailwindcss": {},
+    "autoprefixer": {}
+  }
+}
+
+*Put in App.css
+**********************
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+**********************
+**********************
+
+prettier
+**********************
+*Create file .prettierrc.json
+
+{}
+
+**********************
+*Add format... to package.json
+
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
+  },
+
+**********************
+Create components folder
+
+**********************
+Modify index.js
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./components/App.css";
+import App from "./components/App";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+**********************
+

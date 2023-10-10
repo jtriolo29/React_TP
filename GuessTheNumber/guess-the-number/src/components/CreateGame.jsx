@@ -1,6 +1,6 @@
-import React, {useState} from "react";
-import { STATUS_IN_PROGRESS } from '../utils/constants';
-import ConfirmModal from "./ConfirmModal";
+import React, { useState } from "react";
+import { STATUS_IN_PROGRESS } from "../utils/constants";
+import { DialogButton, Alert } from "./DialogModal";
 
 function CreateGame({ setAnswer, setupNewGame, gameStatus }) {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -8,7 +8,7 @@ function CreateGame({ setAnswer, setupNewGame, gameStatus }) {
   function genAnswer(skipCheck = false) {
     // Check if there is already a game in progress.
     if (!skipCheck && gameStatus === STATUS_IN_PROGRESS) {
-      setShowConfirmModal(true);  // Show modal when game in progress
+      setShowConfirmModal(true); // Show modal when game in progress
       return;
     }
 
@@ -24,12 +24,12 @@ function CreateGame({ setAnswer, setupNewGame, gameStatus }) {
     setupNewGame();
   }
 
-  function handleConfirm(){
+  function handleConfirm() {
     setShowConfirmModal(false);
     genAnswer(true);
   }
 
-  function handleCancel(){
+  function handleCancel() {
     setShowConfirmModal(false);
   }
 
@@ -41,12 +41,20 @@ function CreateGame({ setAnswer, setupNewGame, gameStatus }) {
       >
         Generate Number
       </button>
-      <ConfirmModal
-        isOpen={showConfirmModal} 
-        onCancel={handleCancel}
-        onConfirm={handleConfirm}
-      />
-      <div className="text-purple-600 mt-2 text-xl font-semibold">{gameStatus}</div>
+      {showConfirmModal && (
+        <Alert>
+          <h1 className="text-xl font-bold mb-4">Confirmation</h1>
+          <p className="text-lg mb-4">
+            There is already a game in progress. Are you sure you want to start
+            a new game?
+          </p>
+          <DialogButton backgroundColor="green" onClick={handleConfirm}>Yes</DialogButton>
+          <DialogButton backgroundColor="purple" onClick={handleCancel}>No</DialogButton>
+        </Alert>
+      )}
+      <div className="text-purple-600 mt-2 text-xl font-semibold">
+        {gameStatus}
+      </div>
     </div>
   );
 }
